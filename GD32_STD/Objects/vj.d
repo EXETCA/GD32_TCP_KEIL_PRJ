@@ -1,0 +1,15 @@
+.\objects\vj.o: Lib\LWIP\src\netif\ppp\vj.c
+.\objects\vj.o: .\Lib\LWIP\src\include\netif/ppp/ppp_opts.h
+.\objects\vj.o: .\Lib\LWIP\src\include\lwip/opt.h
+.\objects\vj.o: .\Core\inc\lwipopts.h
+.\objects\vj.o: .\Lib\LWIP\src\include\lwip/debug.h
+.\objects\vj.o: .\Lib\LWIP\src\include\lwip/arch.h
+.\objects\vj.o: .\Lib\LWIP\src\arch/cc.h
+.\objects\vj.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\vj.o: D:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\vj.o: D:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\vj.o: D:\keil\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\vj.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\vj.o: D:\keil\ARM\ARMCC\Bin\..\include\limits.h
+.\objects\vj.o: D:\keil\ARM\ARMCC\Bin\..\include\ctype.h
+.\objects\vj.o: .\Lib\LWIP\src\include\lwip/opt.h

@@ -1,0 +1,11 @@
+.\objects\segger_sysview_rec.o: Lib\SEGGER\SystemView\COMM\SEGGER_SYSVIEW_REC.c
+.\objects\segger_sysview_rec.o: Lib\SEGGER\SystemView\COMM\SEGGER_SYSVIEW_REC.h
+.\objects\segger_sysview_rec.o: .\Lib\SEGGER\SystemView\SEGGER_SYSVIEW.h
+.\objects\segger_sysview_rec.o: .\Lib\SEGGER\SystemView\SEGGER.h
+.\objects\segger_sysview_rec.o: D:\keil\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\segger_sysview_rec.o: .\Lib\SEGGER\Config\Global.h
+.\objects\segger_sysview_rec.o: .\Lib\SEGGER\SystemView\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\segger_sysview_rec.o: .\Lib\SEGGER\Config\SEGGER_SYSVIEW_Conf.h
+.\objects\segger_sysview_rec.o: .\Lib\SEGGER\Config\SEGGER_RTT_Conf.h
+.\objects\segger_sysview_rec.o: .\Lib\SEGGER\RTT\SEGGER_RTT.h
+.\objects\segger_sysview_rec.o: D:\keil\ARM\ARMCC\Bin\..\include\stdlib.h

@@ -1,0 +1,15 @@
+.\objects\upap.o: Lib\LWIP\src\netif\ppp\upap.c
+.\objects\upap.o: .\Lib\LWIP\src\include\netif/ppp/ppp_opts.h
+.\objects\upap.o: .\Lib\LWIP\src\include\lwip/opt.h
+.\objects\upap.o: .\Core\inc\lwipopts.h
+.\objects\upap.o: .\Lib\LWIP\src\include\lwip/debug.h
+.\objects\upap.o: .\Lib\LWIP\src\include\lwip/arch.h
+.\objects\upap.o: .\Lib\LWIP\src\arch/cc.h
+.\objects\upap.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\upap.o: D:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\upap.o: D:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\upap.o: D:\keil\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\upap.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\upap.o: D:\keil\ARM\ARMCC\Bin\..\include\limits.h
+.\objects\upap.o: D:\keil\ARM\ARMCC\Bin\..\include\ctype.h
+.\objects\upap.o: .\Lib\LWIP\src\include\lwip/opt.h

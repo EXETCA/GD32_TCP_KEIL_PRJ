@@ -1,0 +1,15 @@
+.\objects\pppcrypt.o: Lib\LWIP\src\netif\ppp\pppcrypt.c
+.\objects\pppcrypt.o: .\Lib\LWIP\src\include\netif/ppp/ppp_opts.h
+.\objects\pppcrypt.o: .\Lib\LWIP\src\include\lwip/opt.h
+.\objects\pppcrypt.o: .\Core\inc\lwipopts.h
+.\objects\pppcrypt.o: .\Lib\LWIP\src\include\lwip/debug.h
+.\objects\pppcrypt.o: .\Lib\LWIP\src\include\lwip/arch.h
+.\objects\pppcrypt.o: .\Lib\LWIP\src\arch/cc.h
+.\objects\pppcrypt.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\pppcrypt.o: D:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\pppcrypt.o: D:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\pppcrypt.o: D:\keil\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\pppcrypt.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\pppcrypt.o: D:\keil\ARM\ARMCC\Bin\..\include\limits.h
+.\objects\pppcrypt.o: D:\keil\ARM\ARMCC\Bin\..\include\ctype.h
+.\objects\pppcrypt.o: .\Lib\LWIP\src\include\lwip/opt.h
