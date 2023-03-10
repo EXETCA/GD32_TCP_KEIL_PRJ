@@ -43,9 +43,9 @@ extern xSemaphoreHandle g_rx_semaphore ;
 
 int main(void)
 {
-//	SystemInit();
+	SystemInit();
 			//中断组设置
-//	nvic_priority_group_set(NVIC_PRIGROUP_PRE3_SUB1);
+	nvic_priority_group_set(NVIC_PRIGROUP_PRE3_SUB1);
 	CPLD_Init();
 	SEGGER_RTT_Init();
 	EXGPIO_Write(FPGAIO_T4A_ADDR,OFF_CTRL);//复位
