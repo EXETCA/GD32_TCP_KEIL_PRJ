@@ -113,3 +113,10 @@
 .\objects\tcp_server.o: .\Lib\LWIP\src\include\lwip/inet.h
 .\objects\tcp_server.o: .\Lib\LWIP\src\include\lwip/errno.h
 .\objects\tcp_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\tcp_server.o: .\Core\inc\tcpecho.h
+.\objects\tcp_server.o: .\Lib\LWIP\src\arch\sys_arch.h
+.\objects\tcp_server.o: .\Lib\FreeRTOS\Source\include\queue.h
+.\objects\tcp_server.o: .\Lib\FreeRTOS\Source\include\semphr.h
+.\objects\tcp_server.o: .\Core\inc\System_var.h
+.\objects\tcp_server.o: .\Core\inc\System_Const.h
+.\objects\tcp_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

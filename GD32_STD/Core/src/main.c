@@ -40,12 +40,13 @@ const struct ENET_MAC_DBG_REG *Eth_Ddbug;
 extern enet_descriptors_struct  txdesc_tab[ENET_TXBUF_NUM]; 
 extern enet_descriptors_struct  rxdesc_tab[ENET_RXBUF_NUM]; 
 extern xSemaphoreHandle g_rx_semaphore ;
+extern void RTC_Init(void);
 
 int main(void)
 {
 	SystemInit();
 			//中断组设置
-	nvic_priority_group_set(NVIC_PRIGROUP_PRE3_SUB1);
+	nvic_priority_group_set(NVIC_PRIGROUP_PRE4_SUB0);
 	CPLD_Init();
 	SEGGER_RTT_Init();
 	EXGPIO_Write(FPGAIO_T4A_ADDR,OFF_CTRL);//复位
@@ -60,7 +61,8 @@ int main(void)
 	Des1 = (const union EthDes_RxStatus * )&rxdesc_tab[0].status;
   enet_system_setup();
   lwip_stack_init();
-//  enet_enable();  
+	RTC_Init();
+  enet_enable();  
 	//SEGGER_RTT_printf(0,"123213");
 	/*
 	以太网三个主要线程
@@ -142,7 +144,47 @@ static void CPLD_Init(void)
   nor_timing_init_struct.asyn_data_setuptime = 5;
   nor_timing_init_struct.asyn_address_holdtime = 3;
   nor_timing_init_struct.asyn_address_setuptime = 5;
+
+/*SRAM1*/
+	exmc_struct.norsram_region =  EXMC_BANK0_NORSRAM_REGION0;
+  exmc_struct.write_mode = EXMC_ASYN_WRITE;
+  exmc_struct.extended_mode = ENABLE;
+  exmc_struct.asyn_wait = DISABLE;
+  exmc_struct.nwait_signal = DISABLE;
+  exmc_struct.memory_write = ENABLE;
+  exmc_struct.nwait_config = EXMC_NWAIT_CONFIG_DURING;
+  exmc_struct.wrap_burst_mode = DISABLE;
+  exmc_struct.nwait_polarity = EXMC_NWAIT_POLARITY_LOW;
+  exmc_struct.burst_mode = DISABLE;
+  exmc_struct.databus_width = EXMC_NOR_DATABUS_WIDTH_8B;
+  exmc_struct.memory_type = EXMC_MEMORY_TYPE_SRAM;
+  exmc_struct.address_data_mux = DISABLE;
+  exmc_struct.read_write_timing = &nor_timing_init_struct;
+  exmc_struct.write_timing = &nor_timing_init_struct;
+	exmc_norsram_init(&exmc_struct);
+	exmc_norsram_enable(EXMC_BANK0_NORSRAM_REGION0);		
 	
+/*SRAM2*/
+	exmc_struct.norsram_region =  EXMC_BANK0_NORSRAM_REGION1;
+  exmc_struct.write_mode = EXMC_ASYN_WRITE;
+  exmc_struct.extended_mode = ENABLE;
+  exmc_struct.asyn_wait = DISABLE;
+  exmc_struct.nwait_signal = DISABLE;
+  exmc_struct.memory_write = ENABLE;
+  exmc_struct.nwait_config = EXMC_NWAIT_CONFIG_DURING;
+  exmc_struct.wrap_burst_mode = DISABLE;
+  exmc_struct.nwait_polarity = EXMC_NWAIT_POLARITY_LOW;
+  exmc_struct.burst_mode = DISABLE;
+  exmc_struct.databus_width = EXMC_NOR_DATABUS_WIDTH_8B;
+  exmc_struct.memory_type = EXMC_MEMORY_TYPE_SRAM;
+  exmc_struct.address_data_mux = DISABLE;
+  exmc_struct.read_write_timing = &nor_timing_init_struct;
+  exmc_struct.write_timing = &nor_timing_init_struct;
+	exmc_norsram_init(&exmc_struct);
+	exmc_norsram_enable(EXMC_BANK0_NORSRAM_REGION1);
+	
+	
+/*SRAM3*/
 	exmc_struct.norsram_region =  EXMC_BANK0_NORSRAM_REGION2;
   exmc_struct.write_mode = EXMC_ASYN_WRITE;
   exmc_struct.extended_mode = ENABLE;
@@ -160,6 +202,29 @@ static void CPLD_Init(void)
   exmc_struct.write_timing = &nor_timing_init_struct;
 	exmc_norsram_init(&exmc_struct);
 	exmc_norsram_enable(EXMC_BANK0_NORSRAM_REGION2);
+		
+	
+/*SRAM4*/
+	exmc_struct.norsram_region =  EXMC_BANK0_NORSRAM_REGION3;
+  exmc_struct.write_mode = EXMC_ASYN_WRITE;
+  exmc_struct.extended_mode = ENABLE;
+  exmc_struct.asyn_wait = DISABLE;
+  exmc_struct.nwait_signal = DISABLE;
+  exmc_struct.memory_write = ENABLE;
+  exmc_struct.nwait_config = EXMC_NWAIT_CONFIG_DURING;
+  exmc_struct.wrap_burst_mode = DISABLE;
+  exmc_struct.nwait_polarity = EXMC_NWAIT_POLARITY_LOW;
+  exmc_struct.burst_mode = DISABLE;
+  exmc_struct.databus_width = EXMC_NOR_DATABUS_WIDTH_8B;
+  exmc_struct.memory_type = EXMC_MEMORY_TYPE_SRAM;
+  exmc_struct.address_data_mux = DISABLE;
+  exmc_struct.read_write_timing = &nor_timing_init_struct;
+  exmc_struct.write_timing = &nor_timing_init_struct;
+	exmc_norsram_init(&exmc_struct);
+	exmc_norsram_enable(EXMC_BANK0_NORSRAM_REGION3);	
+	
+	
+	
 }
 static void Cpld_GPIO_Init(void)
 {

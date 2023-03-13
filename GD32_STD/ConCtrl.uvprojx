@@ -531,6 +531,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>User/peripheral</GroupName>
+          <Files>
+            <File>
+              <FileName>RTC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\RTC.c</FilePath>
+            </File>
+            <File>
+              <FileName>RTC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\RTC.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Lib/FreeRTOS</GroupName>
           <Files>
             <File>

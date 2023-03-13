@@ -23,6 +23,7 @@
 ".\objects\netconf.o"
 ".\objects\cpld_ctrl.o"
 ".\objects\tcp_server.o"
+".\objects\rtc.o"
 ".\objects\croutine.o"
 ".\objects\event_groups.o"
 ".\objects\list.o"

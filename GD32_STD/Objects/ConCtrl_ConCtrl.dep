@@ -519,7 +519,7 @@ I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x62297358)
 I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_enet.h)(0x637AC84F)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E53505C)
 I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h)(0x62F06970)
-F (.\Core\src\main.c)(0x6408168D)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Lib\GD32F4xx_standard_peripheral\Include -I .\Lib\FreeRTOS\Source\include -I .\Lib\LWIP\src\include -I .\Lib\LWIP\src\include\netif -I .\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU -I .\Driver\CMSIS -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Core\inc -I .\Core\inc\lwip -I .\Driver\CMSIS\_ARMCM4_FP -I .\Lib\LWIP\src -I .\Lib\LWIP\src\netif\ppp -I .\Lib\LWIP\src\include\compat -I .\Lib\LWIP\src\include\compat\stdc -I .\Lib\LWIP\src\include\compat\posix -I .\Lib\LWIP\src\include\netif\ppp -I .\Lib\LWIP\src\include\netif\ppp\polarssl -I .\Lib\LWIP\src\include\lwip -I .\Lib\LWIP\src\include\lwip\apps -I .\Lib\LWIP\src\include\lwip\priv -I .\Lib\LWIP\src\include\lwip\prot -I .\Lib\LWIP\src\arch -I .\Driver\BSP -I .\Lib\SEGGER\Config -I .\Lib\SEGGER\RTT\Config -I .\Lib\SEGGER\RTT -I .\Lib\SEGGER\SystemView -I .\Lib\SEGGER\SystemView\COMM-I.\RTE\_ConCtrl-IC:\Users\13687\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="530" -DGD32F407 -D_RTE_ -DLWIP_DEBUG-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\Core\src\main.c)(0x640E830B)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Lib\GD32F4xx_standard_peripheral\Include -I .\Lib\FreeRTOS\Source\include -I .\Lib\LWIP\src\include -I .\Lib\LWIP\src\include\netif -I .\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU -I .\Driver\CMSIS -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Core\inc -I .\Core\inc\lwip -I .\Driver\CMSIS\_ARMCM4_FP -I .\Lib\LWIP\src -I .\Lib\LWIP\src\netif\ppp -I .\Lib\LWIP\src\include\compat -I .\Lib\LWIP\src\include\compat\stdc -I .\Lib\LWIP\src\include\compat\posix -I .\Lib\LWIP\src\include\netif\ppp -I .\Lib\LWIP\src\include\netif\ppp\polarssl -I .\Lib\LWIP\src\include\lwip -I .\Lib\LWIP\src\include\lwip\apps -I .\Lib\LWIP\src\include\lwip\priv -I .\Lib\LWIP\src\include\lwip\prot -I .\Lib\LWIP\src\arch -I .\Driver\BSP -I .\Lib\SEGGER\Config -I .\Lib\SEGGER\RTT\Config -I .\Lib\SEGGER\RTT -I .\Lib\SEGGER\SystemView -I .\Lib\SEGGER\SystemView\COMM-I.\RTE\_ConCtrl-IC:\Users\13687\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="530" -DGD32F407 -D_RTE_ -DLWIP_DEBUG-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Core\inc\main.h)(0x637AE246)
 I (.\Driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x62F064CE)
 I (C:\Users\13687\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include\gd32f4xx_libopt.h)(0x62297359)
@@ -1100,7 +1100,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E53505C)
 I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h)(0x62F06970)
 F (.\Core\inc\lwipopts.h)(0x64003008)()
 F (.\Core\inc\FreeRTOSConfig.h)(0x64005A47)()
-F (..\..\Basical_Temple\GD32_STD\Core\src\Tcp_Server.c)(0x6407E4F1)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Lib\GD32F4xx_standard_peripheral\Include -I .\Lib\FreeRTOS\Source\include -I .\Lib\LWIP\src\include -I .\Lib\LWIP\src\include\netif -I .\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU -I .\Driver\CMSIS -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Core\inc -I .\Core\inc\lwip -I .\Driver\CMSIS\_ARMCM4_FP -I .\Lib\LWIP\src -I .\Lib\LWIP\src\netif\ppp -I .\Lib\LWIP\src\include\compat -I .\Lib\LWIP\src\include\compat\stdc -I .\Lib\LWIP\src\include\compat\posix -I .\Lib\LWIP\src\include\netif\ppp -I .\Lib\LWIP\src\include\netif\ppp\polarssl -I .\Lib\LWIP\src\include\lwip -I .\Lib\LWIP\src\include\lwip\apps -I .\Lib\LWIP\src\include\lwip\priv -I .\Lib\LWIP\src\include\lwip\prot -I .\Lib\LWIP\src\arch -I .\Driver\BSP -I .\Lib\SEGGER\Config -I .\Lib\SEGGER\RTT\Config -I .\Lib\SEGGER\RTT -I .\Lib\SEGGER\SystemView -I .\Lib\SEGGER\SystemView\COMM-I.\RTE\_ConCtrl-IC:\Users\13687\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="530" -DGD32F407 -D_RTE_ -DLWIP_DEBUG-o .\objects\tcp_server.o --omf_browse .\objects\tcp_server.crf --depend .\objects\tcp_server.d)
+F (..\..\Basical_Temple\GD32_STD\Core\src\Tcp_Server.c)(0x640E8261)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Lib\GD32F4xx_standard_peripheral\Include -I .\Lib\FreeRTOS\Source\include -I .\Lib\LWIP\src\include -I .\Lib\LWIP\src\include\netif -I .\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU -I .\Driver\CMSIS -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Core\inc -I .\Core\inc\lwip -I .\Driver\CMSIS\_ARMCM4_FP -I .\Lib\LWIP\src -I .\Lib\LWIP\src\netif\ppp -I .\Lib\LWIP\src\include\compat -I .\Lib\LWIP\src\include\compat\stdc -I .\Lib\LWIP\src\include\compat\posix -I .\Lib\LWIP\src\include\netif\ppp -I .\Lib\LWIP\src\include\netif\ppp\polarssl -I .\Lib\LWIP\src\include\lwip -I .\Lib\LWIP\src\include\lwip\apps -I .\Lib\LWIP\src\include\lwip\priv -I .\Lib\LWIP\src\include\lwip\prot -I .\Lib\LWIP\src\arch -I .\Driver\BSP -I .\Lib\SEGGER\Config -I .\Lib\SEGGER\RTT\Config -I .\Lib\SEGGER\RTT -I .\Lib\SEGGER\SystemView -I .\Lib\SEGGER\SystemView\COMM-I.\RTE\_ConCtrl-IC:\Users\13687\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="530" -DGD32F407 -D_RTE_ -DLWIP_DEBUG-o .\objects\tcp_server.o --omf_browse .\objects\tcp_server.crf --depend .\objects\tcp_server.d)
 I (.\Core\inc\lwip.h)(0x6400219D)
 I (.\Lib\LWIP\src\include\lwip\opt.h)(0x6407DF22)
 I (.\Core\inc\lwipopts.h)(0x64003008)
@@ -1184,6 +1184,52 @@ I (.\Lib\LWIP\src\include\lwip/priv/mem_priv.h)(0x618C0E7F)
 I (.\Lib\LWIP\src\include\lwip/inet.h)(0x618C0E7F)
 I (.\Lib\LWIP\src\include\lwip/errno.h)(0x618C0E7F)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E53505C)
+I (.\Core\inc\tcpecho.h)(0x640920C1)
+I (.\Lib\LWIP\src\arch\sys_arch.h)(0x64002E28)
+I (.\Lib\FreeRTOS\Source\include\queue.h)(0x62E74219)
+I (.\Lib\FreeRTOS\Source\include\semphr.h)(0x61C2EEAA)
+I (.\Core\inc\System_var.h)(0x640E822D)
+I (.\Core\inc\System_Const.h)(0x640921EC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E53505C)
+F (.\Core\Peripheral\RTC.c)(0x640E8A3A)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Lib\GD32F4xx_standard_peripheral\Include -I .\Lib\FreeRTOS\Source\include -I .\Lib\LWIP\src\include -I .\Lib\LWIP\src\include\netif -I .\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU -I .\Driver\CMSIS -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Core\inc -I .\Core\inc\lwip -I .\Driver\CMSIS\_ARMCM4_FP -I .\Lib\LWIP\src -I .\Lib\LWIP\src\netif\ppp -I .\Lib\LWIP\src\include\compat -I .\Lib\LWIP\src\include\compat\stdc -I .\Lib\LWIP\src\include\compat\posix -I .\Lib\LWIP\src\include\netif\ppp -I .\Lib\LWIP\src\include\netif\ppp\polarssl -I .\Lib\LWIP\src\include\lwip -I .\Lib\LWIP\src\include\lwip\apps -I .\Lib\LWIP\src\include\lwip\priv -I .\Lib\LWIP\src\include\lwip\prot -I .\Lib\LWIP\src\arch -I .\Driver\BSP -I .\Lib\SEGGER\Config -I .\Lib\SEGGER\RTT\Config -I .\Lib\SEGGER\RTT -I .\Lib\SEGGER\SystemView -I .\Lib\SEGGER\SystemView\COMM-I.\RTE\_ConCtrl-IC:\Users\13687\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="530" -DGD32F407 -D_RTE_ -DLWIP_DEBUG-o .\objects\rtc.o --omf_browse .\objects\rtc.crf --depend .\objects\rtc.d)
+I (Core\Peripheral\RTC.h)(0x64084B45)
+I (.\Driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x62F064CE)
+I (C:\Users\13687\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include\gd32f4xx_libopt.h)(0x62297359)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x62297358)
+I (.\Driver\CMSIS\core_cm4.h)(0x62E73F04)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x632032FD)
+I (.\Driver\CMSIS\core_cmInstr.h)(0x62297359)
+I (.\Driver\CMSIS\core_cmFunc.h)(0x62E73E49)
+I (.\Driver\CMSIS\core_cm4_simd.h)(0x62297359)
+I (.\Driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x62297358)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_enet.h)(0x637AC84F)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E53505C)
+I (.\Lib\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h)(0x62F06970)
+F (.\Core\Peripheral\RTC.h)(0x64084B45)()
 F (.\Lib\FreeRTOS\Source\croutine.c)(0x61C2EEAA)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Lib\GD32F4xx_standard_peripheral\Include -I .\Lib\FreeRTOS\Source\include -I .\Lib\LWIP\src\include -I .\Lib\LWIP\src\include\netif -I .\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU -I .\Driver\CMSIS -I .\Driver\CMSIS\GD\GD32F4xx\Include -I .\Core\inc -I .\Core\inc\lwip -I .\Driver\CMSIS\_ARMCM4_FP -I .\Lib\LWIP\src -I .\Lib\LWIP\src\netif\ppp -I .\Lib\LWIP\src\include\compat -I .\Lib\LWIP\src\include\compat\stdc -I .\Lib\LWIP\src\include\compat\posix -I .\Lib\LWIP\src\include\netif\ppp -I .\Lib\LWIP\src\include\netif\ppp\polarssl -I .\Lib\LWIP\src\include\lwip -I .\Lib\LWIP\src\include\lwip\apps -I .\Lib\LWIP\src\include\lwip\priv -I .\Lib\LWIP\src\include\lwip\prot -I .\Lib\LWIP\src\arch -I .\Driver\BSP -I .\Lib\SEGGER\Config -I .\Lib\SEGGER\RTT\Config -I .\Lib\SEGGER\RTT -I .\Lib\SEGGER\SystemView -I .\Lib\SEGGER\SystemView\COMM-I.\RTE\_ConCtrl-IC:\Users\13687\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="530" -DGD32F407 -D_RTE_ -DLWIP_DEBUG-o .\objects\croutine.o --omf_browse .\objects\croutine.crf --depend .\objects\croutine.d)
 I (.\Lib\FreeRTOS\Source\include\FreeRTOS.h)(0x636C6683)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E53505C)
