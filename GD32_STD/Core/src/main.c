@@ -44,9 +44,9 @@ extern void RTC_Init(void);
 
 int main(void)
 {
-	SystemInit();
-			//中断组设置
-	nvic_priority_group_set(NVIC_PRIGROUP_PRE4_SUB0);
+//	SystemInit();
+//			//中断组设置
+//	nvic_priority_group_set(NVIC_PRIGROUP_PRE4_SUB0);
 	CPLD_Init();
 	SEGGER_RTT_Init();
 	EXGPIO_Write(FPGAIO_T4A_ADDR,OFF_CTRL);//复位

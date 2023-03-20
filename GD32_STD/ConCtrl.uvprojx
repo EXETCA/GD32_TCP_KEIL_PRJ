@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -337,7 +337,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>LWIP_DEBUG</Define>
+              <Define></Define>
               <Undefine></Undefine>
               <IncludePath>.\Driver\CMSIS\GD\GD32F4xx\Include;.\Lib\GD32F4xx_standard_peripheral\Include;.\Lib\FreeRTOS\Source\include;.\Lib\LWIP\src\include;.\Lib\LWIP\src\include\netif;.\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU;.\Driver\CMSIS;.\Driver\CMSIS\GD\GD32F4xx\Include;.\Core\inc;.\Core\inc\lwip;.\Driver\CMSIS\_ARMCM4_FP;.\Lib\LWIP\src;.\Lib\LWIP\src\netif\ppp;.\Lib\LWIP\src\include\compat;.\Lib\LWIP\src\include\compat\stdc;.\Lib\LWIP\src\include\compat\posix;.\Lib\LWIP\src\include\netif\ppp;.\Lib\LWIP\src\include\netif\ppp\polarssl;.\Lib\LWIP\src\include\lwip;.\Lib\LWIP\src\include\lwip\apps;.\Lib\LWIP\src\include\lwip\priv;.\Lib\LWIP\src\include\lwip\prot;.\Lib\LWIP\src\arch;.\Driver\BSP;.\Lib\SEGGER\Config;.\Lib\SEGGER\RTT\Config;.\Lib\SEGGER\RTT;.\Lib\SEGGER\SystemView;.\Lib\SEGGER\SystemView\COMM</IncludePath>
             </VariousControls>
@@ -526,7 +526,7 @@
             <File>
               <FileName>Tcp_Server.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\Basical_Temple\GD32_STD\Core\src\Tcp_Server.c</FilePath>
+              <FilePath>.\Core\src\Tcp_Server.c</FilePath>
             </File>
           </Files>
         </Group>

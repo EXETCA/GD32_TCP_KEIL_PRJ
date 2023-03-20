@@ -30,7 +30,7 @@ void RTC_Init(void)
     }
 
     rcu_all_reset_flag_clear();
-    while (1);
+//    while (1);
 }
 void rtc_show_time(void)
 {

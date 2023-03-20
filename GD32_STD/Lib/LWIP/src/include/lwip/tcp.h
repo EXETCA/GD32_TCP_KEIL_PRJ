@@ -386,7 +386,11 @@ struct tcp_pcb {
   u8_t snd_scale;
   u8_t rcv_scale;
 #endif
+#ifndef LWIP_DEBUG 
+}__attribute((packed));
+#else
 };
+#endif 
 
 #if LWIP_EVENT_API
 
