@@ -82,6 +82,7 @@ enet_descriptors_struct  ptp_rxstructure[ENET_RXBUF_NUM];
 
 static struct netif *low_netif = NULL;
 xSemaphoreHandle g_rx_semaphore = NULL;
+extern uint8_t Read_IP;
 /**
 * In this function, the hardware should be initialized.
 * Called from ethernetif_init().
@@ -102,8 +103,8 @@ static void low_level_init(struct netif *netif)
     netif->hwaddr[2] =  MAC_ADDR2;
     netif->hwaddr[3] =  MAC_ADDR3;
     netif->hwaddr[4] =  MAC_ADDR4;
-    netif->hwaddr[5] =  MAC_ADDR5;
-
+   // netif->hwaddr[5] =  MAC_ADDR5;
+   netif->hwaddr[5] = Read_IP;
     /* set netif maximum transfer unit */
     netif->mtu = 1500;
 

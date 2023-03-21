@@ -77,16 +77,15 @@ typedef enum
     CTRL_IO8 = 39,
 
 } CPLD_CTRL;
-
+#ifndef _SYSTEM_CONST_H
 typedef enum
 {
 	ON_CTRL=0x01,
 	OFF_CTRL=0x00,
 	TRUE_CTRL=0x01,
 	FALSE_CTRL=0x00,
-	
 }Ctrl_Out;
-
+#endif
 struct READ_BITS
 {
     uint8_t PIN0 : 1;

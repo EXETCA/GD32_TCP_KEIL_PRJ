@@ -130,7 +130,7 @@
  #if SYS_STATS
          ++lwip_stats.sys.sem.err;
  #endif /* SYS_STATS */
-         printf("[sys_arch]:new sem fail!\n");
+//         SEGGER_RTT_printf(0,"[sys_arch]:new sem fail!\n");
          return ERR_MEM;
      }
  }
@@ -200,7 +200,7 @@
  sys_sem_signal(sys_sem_t *sem)
  {
      if (xSemaphoreGive( *sem ) != pdTRUE)   //释放信号量
-         printf("[sys_arch]:sem signal fail!\n");
+         SEGGER_RTT_printf(0,"[sys_arch]:sem signal fail!\n");
  }
  
  err_t
@@ -212,7 +212,7 @@
          return ERR_OK;      //创建成功返回ERR_OK
      else
      {
-         printf("[sys_arch]:new mutex fail!\n");
+         SEGGER_RTT_printf(0,"[sys_arch]:new mutex fail!\n");
          return ERR_MEM;
      }
  }
@@ -257,7 +257,7 @@
                            (TaskHandle_t*  )&handle);/* 线程控制块指针 */
      if (xReturn != pdPASS)
      {
-         printf("[sys_arch]:create task fail!err:%#lx\n",xReturn);
+         SEGGER_RTT_printf(0,"[sys_arch]:create task fail!err:%#lx\n",xReturn);
          return NULL;
      }
      return handle;

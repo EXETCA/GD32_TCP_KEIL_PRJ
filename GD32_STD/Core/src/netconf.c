@@ -49,7 +49,7 @@ OF SUCH DAMAGE.
 #include "netif.h"
 #include "tcpip.h"
 #define MAX_DHCP_TRIES        4
-
+extern uint8_t Read_IP;
 
 typedef enum {
     DHCP_START = 0,
@@ -100,7 +100,7 @@ void lwip_stack_init(void)
     netmask.addr = 0;
     gw.addr = 0;
 #else
-    IP4_ADDR(&ipaddr, IP_ADDR0, IP_ADDR1, IP_ADDR2, IP_ADDR3);
+    IP4_ADDR(&ipaddr, IP_ADDR0, IP_ADDR1, IP_ADDR2, Read_IP);
     IP4_ADDR(&netmask, NETMASK_ADDR0, NETMASK_ADDR1, NETMASK_ADDR2, NETMASK_ADDR3);
     IP4_ADDR(&gw, GW_ADDR0, GW_ADDR1, GW_ADDR2, GW_ADDR3);
 

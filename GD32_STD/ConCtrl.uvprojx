@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Driver\CMSIS\GD\GD32F4xx\Include;.\Lib\GD32F4xx_standard_peripheral\Include;.\Lib\FreeRTOS\Source\include;.\Lib\LWIP\src\include;.\Lib\LWIP\src\include\netif;.\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU;.\Driver\CMSIS;.\Driver\CMSIS\GD\GD32F4xx\Include;.\Core\inc;.\Core\inc\lwip;.\Driver\CMSIS\_ARMCM4_FP;.\Lib\LWIP\src;.\Lib\LWIP\src\netif\ppp;.\Lib\LWIP\src\include\compat;.\Lib\LWIP\src\include\compat\stdc;.\Lib\LWIP\src\include\compat\posix;.\Lib\LWIP\src\include\netif\ppp;.\Lib\LWIP\src\include\netif\ppp\polarssl;.\Lib\LWIP\src\include\lwip;.\Lib\LWIP\src\include\lwip\apps;.\Lib\LWIP\src\include\lwip\priv;.\Lib\LWIP\src\include\lwip\prot;.\Lib\LWIP\src\arch;.\Driver\BSP;.\Lib\SEGGER\Config;.\Lib\SEGGER\RTT\Config;.\Lib\SEGGER\RTT;.\Lib\SEGGER\SystemView;.\Lib\SEGGER\SystemView\COMM</IncludePath>
+              <IncludePath>.\Driver\CMSIS\GD\GD32F4xx\Include;.\Lib\GD32F4xx_standard_peripheral\Include;.\Lib\FreeRTOS\Source\include;.\Lib\LWIP\src\include;.\Lib\LWIP\src\include\netif;.\Lib\FreeRTOS\Source\portable\RVDS\ARM_CM4_MPU;.\Driver\CMSIS;.\Driver\CMSIS\GD\GD32F4xx\Include;.\Core\inc;.\Core\inc\lwip;.\Driver\CMSIS\_ARMCM4_FP;.\Lib\LWIP\src;.\Lib\LWIP\src\netif\ppp;.\Lib\LWIP\src\include\compat;.\Lib\LWIP\src\include\compat\stdc;.\Lib\LWIP\src\include\compat\posix;.\Lib\LWIP\src\include\netif\ppp;.\Lib\LWIP\src\include\netif\ppp\polarssl;.\Lib\LWIP\src\include\lwip;.\Lib\LWIP\src\include\lwip\apps;.\Lib\LWIP\src\include\lwip\priv;.\Lib\LWIP\src\include\lwip\prot;.\Lib\LWIP\src\arch;.\Driver\BSP;.\Lib\SEGGER\Config;.\Lib\SEGGER\RTT\Config;.\Lib\SEGGER\RTT;.\Lib\SEGGER\SystemView;.\Lib\SEGGER\SystemView\COMM;.\Core\Peripheral</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -468,6 +468,21 @@
               <FileType>1</FileType>
               <FilePath>.\Lib\GD32F4xx_standard_peripheral\Source\gd32f4xx_spi.c</FilePath>
             </File>
+            <File>
+              <FileName>gd32f4xx_fwdgt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\GD32F4xx_standard_peripheral\Source\gd32f4xx_fwdgt.c</FilePath>
+            </File>
+            <File>
+              <FileName>gd32f4xx_trng.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\GD32F4xx_standard_peripheral\Source\gd32f4xx_trng.c</FilePath>
+            </File>
+            <File>
+              <FileName>gd32f4xx_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\GD32F4xx_standard_peripheral\Source\gd32f4xx_usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -524,6 +539,16 @@
               <FilePath>.\Core\inc\FreeRTOSConfig.h</FilePath>
             </File>
             <File>
+              <FileName>Delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\inc\Delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>Delay.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Core\src\Delay.s</FilePath>
+            </File>
+            <File>
               <FileName>Tcp_Server.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Core\src\Tcp_Server.c</FilePath>
@@ -531,17 +556,142 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>User/peripheral</GroupName>
+          <GroupName>User/Peripheral</GroupName>
           <Files>
+            <File>
+              <FileName>Alarm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\Alarm.c</FilePath>
+            </File>
+            <File>
+              <FileName>Alarm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\Alarm.h</FilePath>
+            </File>
+            <File>
+              <FileName>System_var.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\System_var.h</FilePath>
+            </File>
+            <File>
+              <FileName>System_Const.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\System_Const.h</FilePath>
+            </File>
+            <File>
+              <FileName>AMC7836.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\AMC7836.c</FilePath>
+            </File>
+            <File>
+              <FileName>fan.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\fan.c</FilePath>
+            </File>
+            <File>
+              <FileName>fan.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\fan.h</FilePath>
+            </File>
             <File>
               <FileName>RTC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Core\Peripheral\RTC.c</FilePath>
             </File>
             <File>
-              <FileName>RTC.h</FileName>
+              <FileName>AD8688.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Core\Peripheral\RTC.h</FilePath>
+              <FilePath>.\Core\Peripheral\AD8688.h</FilePath>
+            </File>
+            <File>
+              <FileName>AMC7836.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\AMC7836.h</FilePath>
+            </File>
+            <File>
+              <FileName>DAC7558.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\DAC7558.h</FilePath>
+            </File>
+            <File>
+              <FileName>TM1640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\TM1640.c</FilePath>
+            </File>
+            <File>
+              <FileName>TM1640.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\TM1640.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>User/others</GroupName>
+          <Files>
+            <File>
+              <FileName>ETHCommunication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\src\ETHCommunication.c</FilePath>
+            </File>
+            <File>
+              <FileName>System_PRSRAM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\inc\System_PRSRAM.h</FilePath>
+            </File>
+            <File>
+              <FileName>System_GlobalPrototypes.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\inc\System_GlobalPrototypes.h</FilePath>
+            </File>
+            <File>
+              <FileName>tcpecho.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\inc\tcpecho.h</FilePath>
+            </File>
+            <File>
+              <FileName>System_var.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\inc\System_var.h</FilePath>
+            </File>
+            <File>
+              <FileName>Inter_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\Inter_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>Inter_init.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\Inter_init.h</FilePath>
+            </File>
+            <File>
+              <FileName>MAX485.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\MAX485.h</FilePath>
+            </File>
+            <File>
+              <FileName>MAX485.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\MAX485.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>Relay_Ctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Core\Peripheral\Relay_Ctrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>Relay_Ctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Core\Peripheral\Relay_Ctrl.h</FilePath>
             </File>
           </Files>
         </Group>

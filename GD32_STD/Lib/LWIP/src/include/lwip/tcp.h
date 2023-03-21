@@ -391,7 +391,6 @@ struct tcp_pcb {
 #else
 };
 #endif 
-
 #if LWIP_EVENT_API
 
 enum lwip_event {

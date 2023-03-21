@@ -30,7 +30,7 @@ void RTC_Init(void)
     }
 
     rcu_all_reset_flag_clear();
-//    while (1);
+    while (1);
 }
 void rtc_show_time(void)
 {
@@ -59,7 +59,7 @@ void rtc_setup(void)
     }else{
 //        
 //        rtc_show_time();
-        RTC_BKP0 = BKP_VALUE;
+//        RTC_BKP0 = BKP_VALUE;
     }
 }
 void rtc_pre_config(void)

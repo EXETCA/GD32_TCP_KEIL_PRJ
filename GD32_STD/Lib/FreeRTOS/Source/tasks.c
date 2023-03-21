@@ -1152,20 +1152,6 @@ static void prvAddNewTaskToReadyList( TCB_t * pxNewTCB )
 }
 /*-----------------------------------------------------------*/
 
-#if (INCLUDE_pxTaskGetStackStart == 1)
-	uint8_t* pxTaskGetStackStart( TaskHandle_t xTask)
-	{
-	    TCB_t *pxTCB;
-	    UBaseType_t uxReturn;
-        (void)uxReturn;
-
-		pxTCB = prvGetTCBFromHandle( xTask );
-		return ( uint8_t * ) pxTCB->pxStack;
-	}
-
-#endif /* INCLUDE_pxTaskGetStackStart */
-/*-----------------------------------------------------------*/
-
 #if ( INCLUDE_vTaskDelete == 1 )
 
     void vTaskDelete( TaskHandle_t xTaskToDelete )
@@ -3958,7 +3944,19 @@ static void prvCheckTasksWaitingTermination( void )
 
 #endif /* INCLUDE_uxTaskGetStackHighWaterMark */
 /*-----------------------------------------------------------*/
+#if (INCLUDE_pxTaskGetStackStart == 1)
+	uint8_t* pxTaskGetStackStart( TaskHandle_t xTask)
+	{
+	    TCB_t *pxTCB;
+	    UBaseType_t uxReturn;
+        (void)uxReturn;
 
+		pxTCB = prvGetTCBFromHandle( xTask );
+		return ( uint8_t * ) pxTCB->pxStack;
+	}
+
+#endif /* INCLUDE_pxTaskGetStackStart */
+/*-----------------------------------------------------------*/
 #if ( INCLUDE_vTaskDelete == 1 )
 
     static void prvDeleteTCB( TCB_t * pxTCB )

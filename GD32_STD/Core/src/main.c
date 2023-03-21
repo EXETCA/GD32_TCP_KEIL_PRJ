@@ -23,12 +23,20 @@
 
 #include "SEGGER_RTT.h"
 #include "semphr.h"
+#include "delay.h"
+
+/*全局变量定义--声明在各个文件中*/
+#include "System_var.h"
+struct SysData SysData;
+struct SYS_CTRL SysCtrl;
+uint16_t Fan_Speed;
+uint8_t Read_IP;
+
 void Ethernet_init(void);
 static void CPLD_Init(void);
 static void Cpld_GPIO_Init(void);
 static void Eth_LoopBackReset(void);
 static void Eth_LoopBackSet(void);
-void Delay_Us(uint32_t time);
 static void AppTask(void * P);
 static TaskHandle_t taskCtl;
 static TaskHandle_t TCP_Task;
@@ -40,10 +48,13 @@ const struct ENET_MAC_DBG_REG *Eth_Ddbug;
 extern enet_descriptors_struct  txdesc_tab[ENET_TXBUF_NUM]; 
 extern enet_descriptors_struct  rxdesc_tab[ENET_RXBUF_NUM]; 
 extern xSemaphoreHandle g_rx_semaphore ;
-extern void RTC_Init(void);
 
+extern void MAX485_Init(void);
+extern void MAX485_SendData(uint8_t *p, uint32_t len);
+extern void PWM_OUT_INI();
 int main(void)
 {
+//  nvic_vector_table_set(NVIC_VECTTAB_FLASH, 0x00000); //中断向量设置到0x80020000
 //	SystemInit();
 //			//中断组设置
 //	nvic_priority_group_set(NVIC_PRIGROUP_PRE4_SUB0);
@@ -54,15 +65,15 @@ int main(void)
   EXGPIO_Write(FPGAIO_T4A_ADDR,ON_CTRL);
   Delay_Us(200);	
 	Eth_Ddbug =(struct ENET_MAC_DBG_REG *)(0x40028000+0x34);
-
+  Read_IP = EXGPIO_Read(READSTATE_ADDR);
   SEGGER_SYSVIEW_Conf();
 	BaseType_t xReturn = pdPASS;
 	Des0 = (const union EthDes_TxStatus * )&txdesc_tab[0].status;
 	Des1 = (const union EthDes_RxStatus * )&rxdesc_tab[0].status;
+  PWM_OUT_INI();
   enet_system_setup();
   lwip_stack_init();
-	RTC_Init();
-  enet_enable();  
+	enet_enable();  
 	//SEGGER_RTT_printf(0,"123213");
 	/*
 	以太网三个主要线程
@@ -99,12 +110,41 @@ int main(void)
 //	err =  enet_rxframe_size_get();
 //	while(1);
 }
+
 static void AppTask(void * P)
 {
 	uint32_t i =0;
+	uint32_t data[20]={1,2,3,4,5,6,7,8};
+		//InitInnerPeripheral();
+  //  InitAGESysParameter();
+		MAX485_Init();
+//	    gpio_mode_set(GPIOA, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_11);
+//    gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_11);
+//	  gpio_af_set(GPIOA,GPIO_AF_15,GPIO_PIN_11);
+
 	while(1)
 	{
-		i++;
+//			MAX485_SendData((uint8_t *)data,8*4);
+		if(SysCtrl.SampleWaterCnt<20)
+	{
+	   if(SysCtrl.SampleWaterCnt==1)
+	   {
+//	       Read_Water_Valve();
+	   }
+	   SysCtrl.SampleWaterCnt++;
+	}
+	else 
+	{
+	   SysCtrl.SampleWaterCnt=2;
+//	   Read_Water_Valve();	   
+	}
+    
+//	ReadTemp();
+//	
+//    AMC7836ReadADC();  
+//	
+//    DataCollect();
+	
 		vTaskDelay(10);
 	}
 }
@@ -113,7 +153,7 @@ void Ethernet_init(void)
 	uint8_t MacAddr[6]={0x01,0x00,0x12,0x22,0x33,0x33};
 	
 	//Eth_LoopBackSet();
-	
+	MacAddr[5] =Read_IP;
 	enet_mac_address_set(ENET_MAC_ADDRESS0,MacAddr);//配置MAC1地址
 	enet_descriptors_chain_init(ENET_DMA_TX);//库函中已经分配描述符表以及数据缓存空间了 txdesc_tab tx_buff
 	enet_descriptors_chain_init(ENET_DMA_RX);
@@ -144,47 +184,7 @@ static void CPLD_Init(void)
   nor_timing_init_struct.asyn_data_setuptime = 5;
   nor_timing_init_struct.asyn_address_holdtime = 3;
   nor_timing_init_struct.asyn_address_setuptime = 5;
-
-/*SRAM1*/
-	exmc_struct.norsram_region =  EXMC_BANK0_NORSRAM_REGION0;
-  exmc_struct.write_mode = EXMC_ASYN_WRITE;
-  exmc_struct.extended_mode = ENABLE;
-  exmc_struct.asyn_wait = DISABLE;
-  exmc_struct.nwait_signal = DISABLE;
-  exmc_struct.memory_write = ENABLE;
-  exmc_struct.nwait_config = EXMC_NWAIT_CONFIG_DURING;
-  exmc_struct.wrap_burst_mode = DISABLE;
-  exmc_struct.nwait_polarity = EXMC_NWAIT_POLARITY_LOW;
-  exmc_struct.burst_mode = DISABLE;
-  exmc_struct.databus_width = EXMC_NOR_DATABUS_WIDTH_8B;
-  exmc_struct.memory_type = EXMC_MEMORY_TYPE_SRAM;
-  exmc_struct.address_data_mux = DISABLE;
-  exmc_struct.read_write_timing = &nor_timing_init_struct;
-  exmc_struct.write_timing = &nor_timing_init_struct;
-	exmc_norsram_init(&exmc_struct);
-	exmc_norsram_enable(EXMC_BANK0_NORSRAM_REGION0);		
 	
-/*SRAM2*/
-	exmc_struct.norsram_region =  EXMC_BANK0_NORSRAM_REGION1;
-  exmc_struct.write_mode = EXMC_ASYN_WRITE;
-  exmc_struct.extended_mode = ENABLE;
-  exmc_struct.asyn_wait = DISABLE;
-  exmc_struct.nwait_signal = DISABLE;
-  exmc_struct.memory_write = ENABLE;
-  exmc_struct.nwait_config = EXMC_NWAIT_CONFIG_DURING;
-  exmc_struct.wrap_burst_mode = DISABLE;
-  exmc_struct.nwait_polarity = EXMC_NWAIT_POLARITY_LOW;
-  exmc_struct.burst_mode = DISABLE;
-  exmc_struct.databus_width = EXMC_NOR_DATABUS_WIDTH_8B;
-  exmc_struct.memory_type = EXMC_MEMORY_TYPE_SRAM;
-  exmc_struct.address_data_mux = DISABLE;
-  exmc_struct.read_write_timing = &nor_timing_init_struct;
-  exmc_struct.write_timing = &nor_timing_init_struct;
-	exmc_norsram_init(&exmc_struct);
-	exmc_norsram_enable(EXMC_BANK0_NORSRAM_REGION1);
-	
-	
-/*SRAM3*/
 	exmc_struct.norsram_region =  EXMC_BANK0_NORSRAM_REGION2;
   exmc_struct.write_mode = EXMC_ASYN_WRITE;
   exmc_struct.extended_mode = ENABLE;
@@ -202,29 +202,6 @@ static void CPLD_Init(void)
   exmc_struct.write_timing = &nor_timing_init_struct;
 	exmc_norsram_init(&exmc_struct);
 	exmc_norsram_enable(EXMC_BANK0_NORSRAM_REGION2);
-		
-	
-/*SRAM4*/
-	exmc_struct.norsram_region =  EXMC_BANK0_NORSRAM_REGION3;
-  exmc_struct.write_mode = EXMC_ASYN_WRITE;
-  exmc_struct.extended_mode = ENABLE;
-  exmc_struct.asyn_wait = DISABLE;
-  exmc_struct.nwait_signal = DISABLE;
-  exmc_struct.memory_write = ENABLE;
-  exmc_struct.nwait_config = EXMC_NWAIT_CONFIG_DURING;
-  exmc_struct.wrap_burst_mode = DISABLE;
-  exmc_struct.nwait_polarity = EXMC_NWAIT_POLARITY_LOW;
-  exmc_struct.burst_mode = DISABLE;
-  exmc_struct.databus_width = EXMC_NOR_DATABUS_WIDTH_8B;
-  exmc_struct.memory_type = EXMC_MEMORY_TYPE_SRAM;
-  exmc_struct.address_data_mux = DISABLE;
-  exmc_struct.read_write_timing = &nor_timing_init_struct;
-  exmc_struct.write_timing = &nor_timing_init_struct;
-	exmc_norsram_init(&exmc_struct);
-	exmc_norsram_enable(EXMC_BANK0_NORSRAM_REGION3);	
-	
-	
-	
 }
 static void Cpld_GPIO_Init(void)
 {
@@ -345,15 +322,6 @@ static void Cpld_GPIO_Init(void)
   gpio_af_set(GPIOG,GPIO_AF_12,GPIO_PIN_10);
 
 #endif
-}
-void Delay_Us(uint32_t time)
-{
-	uint32_t i ,j = time;
-	do{	
-	i = 3000;
-	while (i--);
-	}
-	while(j--);
 }
 
 static void Eth_LoopBackSet(void)
